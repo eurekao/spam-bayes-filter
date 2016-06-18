@@ -1,0 +1,7 @@
+java/target/
+java/out/
+java/.idea/
+
+python/target/
+python/out/
+python/.idea/
