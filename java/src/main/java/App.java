@@ -51,7 +51,9 @@ public class App {
         }).rdd();
 
         //分隔为两个部分，60%的数据用于训练，40%的用于测试
-        RDD<LabeledPoint>[] splits = parsedSpamData.union(parsedHamData).randomSplit(new double[]{0.9, 0.1}, 11L);
+		RDD<LabeledPoint> parsedData = parsedSpamData.union(parsedHamData);
+		parsedData.cache();
+        RDD<LabeledPoint>[] splits = parsedData.randomSplit(new double[]{0.6, 0.4}, 11L);
         JavaRDD<LabeledPoint> training = splits[0].toJavaRDD();
         JavaRDD<LabeledPoint> test = splits[1].toJavaRDD();
 
