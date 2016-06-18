@@ -28,7 +28,7 @@ public class App {
     public static void main(String[] args) {
         SparkConf conf = new SparkConf()
                 .setMaster("spark://192.168.99.100:7077")
-                .setJars(new String[]{"D:\\workspace\\java\\spamBayesFilter\\out\\artifacts\\spamBayesFilter_jar\\spamBayesFilter.jar"})
+                .setJars(new String[]{"D:\\workspace\\ML\\spamBayesFilter\\java\\out\\artifacts\\spamBayesFilter_jar\\spamBayesFilter.jar"})
                 .setAppName("SpamBayesFilter");
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<String> spamEmails = sc.textFile("hdfs://192.168.99.100:9000/user/root/emails/enron1/spam/*.txt");
