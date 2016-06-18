@@ -5,3 +5,4 @@ java/.idea/
 python/target/
 python/out/
 python/.idea/
+python/*.pyc
